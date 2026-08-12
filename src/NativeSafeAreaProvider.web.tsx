@@ -100,10 +100,10 @@ export function NativeSafeAreaProvider({
     }
 
     return () => {
-      document.body.removeChild(element);
       element.removeEventListener(getSupportedTransitionEvent(), onEnd);
       window.removeEventListener('resize', onEnd);
       resizeObserver?.disconnect();
+      element.remove();
     };
   }, [onInsetsChange]);
 
