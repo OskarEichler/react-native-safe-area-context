@@ -53,7 +53,10 @@ export const SafeAreaView = React.forwardRef<
   }, [edges]);
 
   const appliedStyle = React.useMemo(() => {
-    const flatStyle = (StyleSheet.flatten(style) ?? {}) as Record<string, number>;
+    const flatStyle = (StyleSheet.flatten(style) ?? {}) as Record<
+      string,
+      number
+    >;
 
     if (mode === 'margin') {
       const {
